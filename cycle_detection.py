@@ -4,94 +4,106 @@
 
 def detect_3_cycles(adj):
     """
-    Detect and report 3-cycles (triangles) in a graph.
+    Detect all 3-cycles (triangles) in an undirected graph.
+
+    We use an adjacency-matrix approach: (A^3)_ii gives twice each triangle at vertex i:contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3},
+    then enumerate triangles by intersecting neighbor sets. For each i<j<k, if edges (i,j), (i,k), (j,k) exist,
+    we output (i,j,k).
 
     Parameters:
-    - adj: dict
-        A dictionary representing the adjacency list of an undirected graph.
-        Keys are vertices (comparable: e.g., integers or strings), and values 
-        are iterables of neighboring vertices.
-    
+    - adj (dict): adjacency list of an undirected graph; {vertex: iterable of neighbors}.
+
     Returns:
-    - triangles: list of tuples
-        A list of tuples (v, u, w) representing each 3-cycle found, 
-        with v < u < w in natural order.
+    - List of tuples (v,u,w) with v < u < w, each tuple represents a triangle (cycle of length 3).
     """
-    # Ensure adjacency lists are sets for O(1) membership check
-    neighbors = {v: set(adj[v]) for v in adj}
+    # Map vertices to sorted indices
+    vertices = sorted(adj)
+    index = {v: i for i, v in enumerate(vertices)}
+    n = len(vertices)
+
+    # Build bitset of neighbors for each vertex
+    neighbors_bits = [0] * n
+    for v in vertices:
+        i = index[v]
+        bits = 0
+        for u in adj[v]:
+            if u in index:
+                bits |= (1 << index[u])
+        neighbors_bits[i] = bits
+
     triangles = []
-
-    # Iterate through vertices in sorted (natural) order
-    for v in sorted(neighbors):
-        Nv = neighbors[v]  # Neighbors of v
-        
-        # For each pair (u, w) in Nv × Nv, enforce ordering v < u < w
-        for u in Nv:
-            if u <= v:
-                continue
-            for w in Nv:
-                if w <= u:
-                    continue
-                # Check if u and w are directly connected
-                if w in neighbors[u]:
-                    # Report triangle (v, u, w)
-                    triangles.append((v, u, w))
-        
-        # Discard v (remove it so it won't be considered again)
-        del neighbors[v]
-
+    # Enumerate triangles by scanning pairs of neighbors
+    for i in range(n):
+        # Only consider neighbors j > i to enforce ordering
+        jmask = neighbors_bits[i] & ~((1 << (i+1)) - 1)
+        while jmask:
+            lsb = jmask & -jmask
+            j = lsb.bit_length() - 1
+            # Common neighbors of i and j
+            common = neighbors_bits[i] & neighbors_bits[j]
+            # Only k > j to maintain i < j < k
+            common &= ~((1 << (j+1)) - 1)
+            kmask = common
+            while kmask:
+                lsb2 = kmask & -kmask
+                k = lsb2.bit_length() - 1
+                triangles.append((vertices[i], vertices[j], vertices[k]))
+                kmask ^= lsb2
+            jmask ^= lsb
     return triangles
 
 def detect_4_cycles(adj):
     """
-    Detect and report 4-cycles in a graph.
+    Detect all 4-cycles (simple cycles of length 4) in an undirected graph.
+
+    The adjacency-matrix trace of A^4 counts 4-cycles (each simple 4-cycle eight times):contentReference[oaicite:4]{index=4}.
+    To list them, for each pair of non-adjacent vertices i < j, we find two distinct common neighbors u < w.
+    Each such tuple (i, u, j, w) forms a 4-cycle i-u-j-w.
 
     Parameters:
-    - adj: dict
-        A dictionary representing the adjacency list of an undirected graph.
-        Keys are vertices (comparable: e.g., integers or strings), and values 
-        are iterables of neighboring vertices.
-    
+    - adj (dict): adjacency list of an undirected graph; {vertex: iterable of neighbors}.
+
     Returns:
-    - cycles: list of tuples
-        A list of tuples (v, u, v', w) representing each 4-cycle found,
-        corresponding to the cycle v - u - v' - w - v. Each 4-cycle is reported once.
+    - List of tuples (v, u, v', w) for each 4-cycle, with v < v' and u < w.
     """
-    # Convert adjacency lists into sets for O(1) neighbor checks
-    neighbors = {v: set(adj[v]) for v in adj}
-    seen = set()   # to record which 4-vertex sets we've already reported
+    vertices = sorted(adj)
+    index = {v: i for i, v in enumerate(vertices)}
+    n = len(vertices)
+    
+    # Build bitset of neighbors for each vertex
+    neighbors_bits = [0] * n
+    for v in vertices:
+        i = index[v]
+        bits = 0
+        for u in adj[v]:
+            if u in index:
+                bits |= (1 << index[u])
+        neighbors_bits[i] = bits
+
     cycles = []
-
-    # Sort vertices to enforce an order
-    vertices = sorted(neighbors)
-
-    # Look at every unordered pair (v, v') with v < v' and no edge between them
-    for i in range(len(vertices)):
-        v = vertices[i]
-        for j in range(i+1, len(vertices)):
-            v_prime = vertices[j]
-            if v_prime in neighbors[v]:
-                continue  # skip if there's an edge v--v'
-
-            # Find common neighbors of v and v'
-            common = neighbors[v].intersection(neighbors[v_prime])
-            # If fewer than 2 common neighbors, we can't form a 4-cycle this way
-            if len(common) < 2:
+    # For each pair i < j without an edge, find two common neighbors
+    for i in range(n):
+        for j in range(i+1, n):
+            # Skip if i-j is an edge
+            if (neighbors_bits[i] >> j) & 1:
                 continue
-
-            # Sort common neighbors so we can pick pairs (u, w) with u < w
-            sorted_common = sorted(common)
-            for x in range(len(sorted_common)):
-                u = sorted_common[x]
-                for y in range(x+1, len(sorted_common)):
-                    w = sorted_common[y]
-                    # Now {v, u, v', w} is a candidate 4-cycle
-                    cycle_set = frozenset({v, u, v_prime, w})
-                    if cycle_set not in seen:
-                        seen.add(cycle_set)
-                        # We append it in the order v - u - v' - w
-                        cycles.append((v, u, v_prime, w))
-
+            common = neighbors_bits[i] & neighbors_bits[j]
+            if not common:
+                continue
+            # Extract set bits (common neighbors indices)
+            common_indices = []
+            cm = common
+            while cm:
+                bit = cm & -cm
+                idx = bit.bit_length() - 1
+                common_indices.append(idx)
+                cm ^= bit
+            # For each pair (u, w) of common neighbors (u < w), output cycle (i, u, j, w)
+            for x in range(len(common_indices)):
+                for y in range(x+1, len(common_indices)):
+                    u = common_indices[x]
+                    w = common_indices[y]
+                    cycles.append((vertices[i], vertices[u], vertices[j], vertices[w]))
     return cycles
 
 def build_simplicial_complex(vertices, adj):
