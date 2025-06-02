@@ -1,6 +1,7 @@
 import homology
 import time
 import json
+import os
 from cycle_detection import build_simplicial_complex
 
 
@@ -22,7 +23,11 @@ def homology_from_graph(vertices, adj, mod_2=False):
 
 
 def load_graphs(filename="graphs.json"):
-    with open(filename, 'r') as f:
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(base_dir, '..', 'data', filename)
+
+    with open(path, 'r') as f:
         return json.load(f)
 
 

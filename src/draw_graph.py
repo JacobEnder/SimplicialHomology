@@ -184,14 +184,18 @@ class GraphDrawer:
         }
 
         existing_data = []
-        if os.path.exists(filename):
-            with open(filename, 'r') as f:
+
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(base_dir, '..', 'data', filename)
+        
+        if os.path.exists(path):
+            with open(path, 'r') as f:
                 try:
                     existing_data = json.load(f)
                 except json.JSONDecodeError:
                     existing_data = []
         existing_data.append(graph_data)
-        with open(filename, 'w') as f:
+        with open(path, 'w') as f:
             json.dump(existing_data, f, indent=4)
         print(f"Graph '{name}' saved to {filename}")
 
