@@ -6,7 +6,7 @@ def detect_3_cycles(adj):
     """
     Detect all 3-cycles (triangles) in an undirected graph.
 
-    We use an adjacency-matrix approach: (A^3)_ii gives twice each triangle at vertex i:contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3},
+    We use an adjacency-matrix approach: (A^3)_ii gives twice each triangle at vertex i,
     then enumerate triangles by intersecting neighbor sets. For each i<j<k, if edges (i,j), (i,k), (j,k) exist,
     we output (i,j,k).
 
@@ -56,7 +56,7 @@ def detect_4_cycles(adj):
     """
     Detect all 4-cycles (simple cycles of length 4) in an undirected graph.
 
-    The adjacency-matrix trace of A^4 counts 4-cycles (each simple 4-cycle eight times):contentReference[oaicite:4]{index=4}.
+    The adjacency-matrix trace of A^4 counts 4-cycles (each simple 4-cycle eight times).
     To list them, for each pair of non-adjacent vertices i < j, we find two distinct common neighbors u < w.
     Each such tuple (i, u, j, w) forms a 4-cycle i-u-j-w.
 
@@ -174,23 +174,4 @@ def build_simplicial_complex(vertices, adj):
         A.add(tri2)
 
     return X, A
-
-
-# Example usage:
-if __name__ == "__main__":
-    vertices = [1, 2, 3, 4]
-    adj = {
-       1: [2,4],
-       2: [1,3],
-       3: [2,4],
-       4: [1,3]
-    }
-
-    X, A = build_simplicial_complex(vertices, adj)
-
-    print("Vertices (X):")
-    print(X)
-    print("\nFaces (A):")
-    for face in sorted(A, key=lambda f: (len(f), f)):
-        print(face)
-     
+    
