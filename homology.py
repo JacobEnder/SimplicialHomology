@@ -5,6 +5,9 @@ import json
 import itertools
 import time
 
+def z_mod_2(x):
+    return x % 2 == 0
+
 # Check if a pair (X, A) is indeed a simplicial complex
 def is_simp_cplx(vertices, faces):
 
@@ -59,15 +62,19 @@ def boundary(n, faces):
     return boundary_matrix
 
 # Compute the nth discrete homology group of (X, A)
-def homology(n, faces):
+def homology(n, faces, mod_2=False):
 
     # Get our boundary maps
     delta_n = boundary(n, faces)
     delta_n_plus_one = boundary(n+1, faces)
 
-    # Built-in kernel and rank
-    ker_del_n = delta_n.nullspace()
-    rank_del_n_plus_one = delta_n_plus_one.rank()
+    if (mod_2==False):
+        # Built-in kernel and rank
+        ker_del_n = delta_n.nullspace()
+        rank_del_n_plus_one = delta_n_plus_one.rank()
+    else:
+        ker_del_n = delta_n.nullspace()
+        rank_del_n_plus_one = delta_n_plus_one.rank(iszerofunc=z_mod_2)
 
     # By rank-nullity, dim(H_n) = nullity(delta_n) - rank(delta_{n+1})
     homology_dimension = len(ker_del_n) - rank_del_n_plus_one
@@ -80,6 +87,23 @@ def print_simp_cplx(X, A):
     print(X)
     print("\nFaces\n")
     print(A)
+
+def complete_simp_cplx(faces):
+    seen = set(tuple(sorted(face)) for face in faces)
+    original_length = len(faces)
+    
+    for i in range(original_length):
+        face = faces[i]
+        n = len(face)
+        
+        for r in range(1, n):
+            for subset in itertools.combinations(face, r):
+                subset_sorted = tuple(sorted(subset))
+                if subset_sorted not in seen:
+                    faces.append(list(subset_sorted))
+                    seen.add(subset_sorted)
+    
+    return faces
 
 if __name__ == "__main__":
 
@@ -98,13 +122,30 @@ if __name__ == "__main__":
         
         print("\nIs this a valid simplicial complex? " + str(is_simp_cplx(X, A)))
 
-        start = time.time()
+        if (is_simp_cplx == True):
+            start = time.time()
 
-        print("\nH0 has dimension " + str(homology(0, A)))
-        print("H1 has dimension " + str(homology(1, A)))
-        print("H2 has dimension " + str(homology(2, A)))
+            print("\nH0 has dimension " + str(homology(0, A)))
+            print("H1 has dimension " + str(homology(1, A)))
+            print("H2 has dimension " + str(homology(2, A)))
 
-        print("\nElapsed time (sec): " + str(time.time() - start))
-        print("\n-----------------------------------------")
+            print("\nElapsed time (sec): " + str(time.time() - start))
+            print("\n-----------------------------------------")
+        else:
+            print("\nCompleting complex. Completion:")
 
-    print("\nTotal elapsed time (sec): " + str(time.time() - overall_start)) 
+            completed_complex_X = complex["X"]
+            completed_complex_A = complete_simp_cplx(complex["A"])
+
+            print_simp_cplx(completed_complex_X,completed_complex_A)
+        
+            start = time.time()
+
+            print("\nH0 has dimension " + str(homology(0, completed_complex_A)))
+            print("H1 has dimension " + str(homology(1, completed_complex_A)))
+            print("H2 has dimension " + str(homology(2, completed_complex_A)))
+
+            print("\nElapsed time (sec): " + str(time.time() - start))
+            print("\n-----------------------------------------")
+
+    print("\nTotal elapsed time (sec): " + str(time.time() - overall_start))
