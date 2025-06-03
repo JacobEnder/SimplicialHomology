@@ -81,6 +81,7 @@ def homology(n, faces, mod_2=False):
 
     return homology_dimension
 
+# Pretty-print a complex
 def print_simp_cplx(X, A):
     print("\nThis complex is given by:\n")
     print("Underlying space\n")
@@ -88,7 +89,10 @@ def print_simp_cplx(X, A):
     print("\nFaces\n")
     print(A)
 
+# If given a set of faces that is not a simplicial complex, we can complete the set to
+# a simplicial complex by simply adding the necessary faces.
 def complete_simp_cplx(faces):
+    
     seen = set(tuple(sorted(face)) for face in faces)
     original_length = len(faces)
     
@@ -104,48 +108,3 @@ def complete_simp_cplx(faces):
                     seen.add(subset_sorted)
     
     return faces
-
-if __name__ == "__main__":
-
-    file_path = "simplicial_complexes.json"
-
-    with open(file_path, "r") as f:
-        loaded_complexes = json.load(f)
-
-    overall_start = time.time()
-
-    for idx, complex in enumerate(loaded_complexes):
-        X = complex["X"]
-        A = complex["A"]
-
-        print_simp_cplx(X,A)
-        
-        print("\nIs this a valid simplicial complex? " + str(is_simp_cplx(X, A)))
-
-        if (is_simp_cplx == True):
-            start = time.time()
-
-            print("\nH0 has dimension " + str(homology(0, A)))
-            print("H1 has dimension " + str(homology(1, A)))
-            print("H2 has dimension " + str(homology(2, A)))
-
-            print("\nElapsed time (sec): " + str(time.time() - start))
-            print("\n-----------------------------------------")
-        else:
-            print("\nCompleting complex. Completion:")
-
-            completed_complex_X = complex["X"]
-            completed_complex_A = complete_simp_cplx(complex["A"])
-
-            print_simp_cplx(completed_complex_X,completed_complex_A)
-        
-            start = time.time()
-
-            print("\nH0 has dimension " + str(homology(0, completed_complex_A)))
-            print("H1 has dimension " + str(homology(1, completed_complex_A)))
-            print("H2 has dimension " + str(homology(2, completed_complex_A)))
-
-            print("\nElapsed time (sec): " + str(time.time() - start))
-            print("\n-----------------------------------------")
-
-    print("\nTotal elapsed time (sec): " + str(time.time() - overall_start))
