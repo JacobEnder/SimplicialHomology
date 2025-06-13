@@ -3,15 +3,17 @@ import time
 import json
 import os
 from cycle_detection import build_simplicial_complex
-
+from preprocess import preprocess
 
 # Take our graph G, build a simplicial complex (X, A) over it, and calculate the homology of (X,A)
 # over the user's choice of Q or Z/2
 
 def homology_from_graph(vertices, adj, mod_2=False):
 
+    reduced_vertices, reduced_adj = preprocess(adj)
+
     # Build a simplicial complex associated to G
-    X, A = build_simplicial_complex(vertices, adj)
+    X, A = build_simplicial_complex(reduced_vertices, reduced_adj)
 
     # Two different fields of coefficients
     if not mod_2:
@@ -53,7 +55,7 @@ def run():
         print(f"Graph: {name}")
         start_time = time.time()
         H0, H1, H2 = homology_from_graph(vertices, adj, mod_2=mod_2)
-        elapsed = round(time.time() - start_time, 8)
+        elapsed = round(time.time() - start_time, 15)
         print(f"(H0, H1, H2): {H0}, {H1}, {H2}")
         print(f"Time: {elapsed} sec\n")
 

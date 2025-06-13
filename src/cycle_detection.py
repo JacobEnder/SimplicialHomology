@@ -50,11 +50,12 @@ def detect_3_cycles(adj):
                 triangles.append((vertices[i], vertices[j], vertices[k]))
                 kmask ^= lsb2
             jmask ^= lsb
+
     return triangles
 
 def detect_4_cycles(adj):
     """
-    Detect all 4-cycles (simple cycles of length 4) in an undirected graph.
+    Detect all 4-cycles in an undirected graph.
 
     The adjacency-matrix trace of A^4 counts 4-cycles (each simple 4-cycle eight times).
     To list them, for each pair of non-adjacent vertices i < j, we find two distinct common neighbors u < w.
@@ -104,6 +105,7 @@ def detect_4_cycles(adj):
                     u = common_indices[x]
                     w = common_indices[y]
                     cycles.append((vertices[i], vertices[u], vertices[j], vertices[w]))
+    
     return cycles
 
 def build_simplicial_complex(vertices, adj):
