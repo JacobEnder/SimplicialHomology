@@ -1,10 +1,9 @@
-# Naive calculation of H0 and H1 for simplicial complexes
+# Naive calculation of H0, H1 and H2 for simplicial complexes
 
 using LinearAlgebra
 using JSON3
 using Combinatorics
 
-# Can use Q or Z/2 as the field of coefficients.
 function z_mod_2(x)
     return x % 2 == 0
 end
@@ -52,7 +51,7 @@ function boundary(n, faces)
     for (col, sigma) in enumerate(n_simplices)
         for i in 1:length(sigma)
             # From the definition of the boundary map, delete entry i and take the sign as (-1)^i
-            sign = (-1)^(i-1) # Shift i down as Julia uses 1-indexing.
+            sign = (-1)^(i-1)  # Julia uses 1-based indexing
             face_array = [sigma[j] for j in 1:length(sigma) if j != i]
             face = tuple(sort(face_array)...)
 

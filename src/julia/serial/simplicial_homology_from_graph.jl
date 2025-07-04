@@ -3,6 +3,7 @@ include("cycle_detection.jl")
 include("preprocess.jl")
 
 using JSON3
+using .CycleDetection
 
 # Take our graph G, build a simplicial complex (X, A) over it, and calculate the homology of (X,A)
 # over the user's choice of Q or Z/2
@@ -32,7 +33,7 @@ end
 # Load the JSON file containing all our graphs
 function load_graphs(filename="graphs.json")
     base_dir = dirname(@__FILE__)
-    path = joinpath(base_dir, "..", "..", "data", filename)  # Graphs are stored in /data/graphs.json by default
+    path = joinpath(base_dir, "..", "..", "..", "data", filename)  # Graphs are stored in /data/graphs.json by default
     
     return JSON3.read(read(path, String))
 end
@@ -41,7 +42,7 @@ function run()
     # Field selection
     println("Compute homology over Q or Z/2? (q/2): ")
     input_str = strip(lowercase(readline()))
-    mod_2 = input_str == "2" # Fixing the field of coefficients as Julia batch jobs don't take user input.
+    mod_2 = input_str == "2"
     
     graphs = load_graphs()
 
@@ -50,7 +51,7 @@ function run()
         name = get(graph, "name", "Unnamed Graph")
         vertices = graph["vertices"]
         
-        # Convert every list to a list of strings. This is to prevent type-checking errors down the road.
+        # Fix type consistency: convert everything to strings
         vertices_str = String.(vertices)
         adj_raw = Dict(k => v for (k, v) in graph["adjacency_list"])
         adj = Dict(String(k) => String.(v) for (k, v) in adj_raw)
