@@ -184,7 +184,7 @@ def create_visualizations(df, filename='parallel_simp_test.txt'):
     print(f"Total time correlation: {df['edge_probability'].corr(df['total_time']):.3f}")
 
 def main():
-    """Main function to run the analysis."""
+    
     filename = 'parallel_simp_test.txt'
     
     try:

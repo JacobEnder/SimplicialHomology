@@ -1,6 +1,5 @@
 using Base.Threads
 
-# More flexible signature that handles different vector types
 function preprocess(adj::Dict{T,V}) where {T, V <: AbstractVector}
     # Convert to consistent types and deep copy to avoid mutating input
     neighbors = Dict{T, Vector{T}}()

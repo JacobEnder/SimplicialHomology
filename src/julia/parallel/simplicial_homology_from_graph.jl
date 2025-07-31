@@ -6,7 +6,7 @@ using JSON3
 using .CycleDetection
 using Base.Threads
 
-# Calculate H0 with memory management
+# Calculate H0
 function calculate_h0(vertices, adj; mod_2=false)
     try
         reduced_vertices, reduced_adj = preprocess(adj)
@@ -36,7 +36,7 @@ function calculate_h0(vertices, adj; mod_2=false)
     end
 end
 
-# Calculate H1 with memory management
+# Calculate H1 
 function calculate_h1(vertices, adj; mod_2=false)
     try
         reduced_vertices, reduced_adj = preprocess(adj)
@@ -66,7 +66,7 @@ function calculate_h1(vertices, adj; mod_2=false)
     end
 end
 
-# Get the number of graphs without loading all data
+# Get the number of graphs
 function get_graph_count(filename="graphs.json")
     base_dir = dirname(@__FILE__)
     path = joinpath(base_dir, "..", "..", "..", "data", filename)
@@ -109,7 +109,7 @@ function load_single_graph(filename, index)
     end
 end
 
-# Check if a graph should be processed (size filtering)
+# Check if a graph should be processed (size filtering, we don't really use this)
 function should_process_graph(graph, max_vertices=1000)
     vertices = graph["vertices"]
     return length(vertices) <= max_vertices
@@ -155,7 +155,6 @@ function run()
         name = get(graph, "name", "Graph_$i")
         vertices = graph["vertices"]
         
-        # Fix type consistency: convert everything to strings
         vertices_str = String.(vertices)
         adj_raw = Dict(k => v for (k, v) in graph["adjacency_list"])
         adj = Dict(String(k) => String.(v) for (k, v) in adj_raw)
@@ -205,7 +204,7 @@ function run()
         println("  Total: $(total_elapsed)s")
         println("  Memory cleaned up\n")
         
-        # Optional: Add a small delay to help with memory management
+        # Give a tiny amount of time for auto garbage collection
         sleep(0.1)
     end
     
