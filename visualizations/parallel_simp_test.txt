@@ -1,0 +1,597 @@
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.11/Project.toml`
+  No Changes to `~/.julia/environments/v1.11/Manifest.toml`
+Compute homology over Q or Z/2? (q/2): 
+Number of threads available: 64
+Total graphs in file: 45
+Processing graph 1 (index 1): erdos_renyi_112_0.172355682465626 (112 vertices)
+  H0: 1 (7.560827970504761s)
+  H1: 0 (23.90249991416931s)
+  Total: 31.463327884674072s
+  Memory cleaned up
+
+Processing graph 2 (index 2): erdos_renyi_167_0.06527879832694006 (167 vertices)
+  H0: 1 (0.408956050872803s)
+  H1: 3 (2.933825969696045s)
+  Total: 3.342782020568848s
+  Memory cleaned up
+
+Processing graph 3 (index 3): erdos_renyi_117_0.01762801849665912 (117 vertices)
+  H0: 1 (0.244641065597534s)
+  H1: 22 (0.277924060821533s)
+  Total: 0.522565126419067s
+  Memory cleaned up
+
+Processing graph 4 (index 4): erdos_renyi_104_0.11493426273007484 (104 vertices)
+  H0: 1 (0.345262050628662s)
+  H1: 0 (5.458037137985229s)
+  Total: 5.803299188613891s
+  Memory cleaned up
+
+Processing graph 5 (index 5): erdos_renyi_248_0.18386756768516688 (248 vertices)
+  H0: 1 (2.472630023956299s)
+  H1: 0 (3504.358717918396s)
+  Total: 3506.8313479423523s
+  Memory cleaned up
+
+Processing graph 6 (index 6): erdos_renyi_120_0.11162387570713697 (120 vertices)
+  H0: 1 (0.238195896148682s)
+  H1: 1 (221.70386600494385s)
+  Total: 221.94206190109256s
+  Memory cleaned up
+
+Processing graph 7 (index 7): erdos_renyi_150_0.1122009731044374 (150 vertices)
+  H0: 1 (0.332947015762329s)
+  H1: 0 (598.0792050361633s)
+  Total: 598.4121520519257s
+  Memory cleaned up
+
+Processing graph 8 (index 8): erdos_renyi_269_0.1495568379301205 (269 vertices)
+  H0: 1 (1.894319772720337s)
+  H1: 0 (4656.376709938049s)
+  Total: 4658.271029710769s
+  Memory cleaned up
+
+Processing graph 9 (index 9): erdos_renyi_281_0.11324617612980124 (281 vertices)
+  H0: 1 (1.262696981430054s)
+  H1: 0 (3668.8419318199158s)
+  Total: 3670.104628801346s
+  Memory cleaned up
+
+Processing graph 10 (index 10): erdos_renyi_163_0.104724078328697 (163 vertices)
+  H0: 1 (6.833325862884521s)
+  H1: 0 (54.77045011520386s)
+  Total: 61.60377597808838s
+  Memory cleaned up
+
+Processing graph 11 (index 11): erdos_renyi_112_0.19153838315494265 (112 vertices)
+  H0: 1 (0.703376054763794s)
+  H1: 0 (24.533567905426025s)
+  Total: 25.23694396018982s
+  Memory cleaned up
+
+Processing graph 12 (index 12): erdos_renyi_146_0.13868622096296346 (146 vertices)
+  H0: 1 (1.343723058700562s)
+  H1: 0 (86.42788982391357s)
+  Total: 87.77161288261412s
+  Memory cleaned up
+
+Processing graph 13 (index 13): erdos_renyi_273_0.06513737293310466 (273 vertices)
+  H0: 1 (0.449970960617065s)
+  H1: 0 (246.25842213630676s)
+  Total: 246.70839309692383s
+  Memory cleaned up
+
+Processing graph 14 (index 14): erdos_renyi_139_0.023423826574477412 (139 vertices)
+  H0: 1 (0.15334415435791s)
+  H1: 72 (2.179476022720337s)
+  Total: 2.332820177078247s
+  Memory cleaned up
+
+Processing graph 15 (index 15): erdos_renyi_250_0.10177270883127358 (250 vertices)
+  H0: 1 (11.484071016311646s)
+  H1: 0 (1403.063766002655s)
+  Total: 1414.5478370189667s
+  Memory cleaned up
+
+Processing graph 16 (index 16): erdos_renyi_252_0.17646693979094735 (252 vertices)
+  H0: 1 (2.323076009750366s)
+  H1: 0 (3482.2029840946198s)
+  Total: 3484.52606010437s
+  Memory cleaned up
+
+Processing graph 17 (index 17): erdos_renyi_148_0.01642426977468714 (148 vertices)
+  H0: 1 (0.58588695526123s)
+  H1: 41 (1.613640785217285s)
+  Total: 2.199527740478515s
+  Memory cleaned up
+
+Processing graph 18 (index 18): erdos_renyi_186_0.17438654976330956 (186 vertices)
+  H0: 1 (14.785189151763916s)
+  H1: 0 (587.1044399738312s)
+  Total: 601.8896291255951s
+  Memory cleaned up
+
+Processing graph 19 (index 19): erdos_renyi_269_0.10614353052121053 (269 vertices)
+  H0: 1 (1.00703501701355s)
+  H1: 0 (2278.719213962555s)
+  Total: 2279.7262489795685s
+  Memory cleaned up
+
+Processing graph 20 (index 20): erdos_renyi_181_0.0797170967706373 (181 vertices)
+  H0: 1 (2.196128845214844s)
+  H1: 0 (43.6677348613739s)
+  Total: 45.863863706588745s
+  Memory cleaned up
+
+Processing graph 21 (index 21): erdos_renyi_100_0.18195341665199177 (100 vertices)
+  H0: 1 (0.238193035125732s)
+  H1: 0 (18.435724020004272s)
+  Total: 18.673917055130005s
+  Memory cleaned up
+
+Processing graph 22 (index 22): erdos_renyi_132_0.1925072690542063 (132 vertices)
+  H0: 1 (0.406938076019287s)
+  H1: 0 (141.79680395126343s)
+  Total: 142.20374202728271s
+  Memory cleaned up
+
+Processing graph 23 (index 23): erdos_renyi_276_0.15378670312690257 (276 vertices)
+  H0: 1 (2.231428861618042s)
+  H1: 0 (7494.813677072525s)
+  Total: 7497.045105934143s
+  Memory cleaned up
+
+Processing graph 24 (index 24): erdos_renyi_120_0.12045146264707933 (120 vertices)
+  H0: 1 (0.230222940444946s)
+  H1: 0 (30.9253671169281s)
+  Total: 31.155590057373047s
+  Memory cleaned up
+
+Processing graph 25 (index 25): erdos_renyi_101_0.023750124400353227 (101 vertices)
+  H0: 1 (0.135503053665161s)
+  H1: 25 (0.428316831588745s)
+  Total: 0.563819885253906s
+  Memory cleaned up
+
+Processing graph 26 (index 26): erdos_renyi_147_0.11128558992749973 (147 vertices)
+  H0: 1 (2.525347948074341s)
+  H1: 0 (41.96844220161437s)
+  Total: 44.493790149688714s
+  Memory cleaned up
+
+Processing graph 27 (index 27): erdos_renyi_155_0.1363221074060452 (155 vertices)
+  H0: 1 (0.382380962371826s)
+  H1: 0 (222.4704248905182s)
+  Total: 222.85280585289001s
+  Memory cleaned up
+
+Processing graph 28 (index 28): erdos_renyi_279_0.1550167596242925 (279 vertices)
+  H0: 1 (4.634886026382446s)
+  H1: 0 (7810.442865848541s)
+  Total: 7815.077751874924s
+  Memory cleaned up
+
+Processing graph 29 (index 29): erdos_renyi_201_0.13413841240224636 (201 vertices)
+  H0: 1 (0.992884159088135s)
+  H1: 0 (546.7415080070496s)
+  Total: 547.7343921661377s
+  Memory cleaned up
+
+Processing graph 30 (index 30): erdos_renyi_159_0.12713600102162873 (159 vertices)
+  H0: 1 (0.449106931686401s)
+  H1: 0 (115.36005711555481s)
+  Total: 115.80916404724121s
+  Memory cleaned up
+
+Processing graph 31 (index 31): erdos_renyi_208_0.08017158053085718 (208 vertices)
+  H0: 1 (0.302198886871338s)
+  H1: 0 (119.95437693595886s)
+  Total: 120.25657582283021s
+  Memory cleaned up
+
+Processing graph 32 (index 32): erdos_renyi_154_0.1620615770264933 (154 vertices)
+  H0: 1 (4.009300947189331s)
+  H1: 0 (167.1775879859924s)
+  Total: 171.18688893318173s
+  Memory cleaned up
+
+Processing graph 33 (index 33): erdos_renyi_110_0.06181171128236331 (110 vertices)
+  H0: 1 (0.16457986831665s)
+  H1: 63 (0.322153091430664s)
+  Total: 0.486732959747314s
+  Memory cleaned up
+
+Processing graph 34 (index 34): erdos_renyi_187_0.029098807685165456 (187 vertices)
+  H0: 1 (0.175528049468994s)
+  H1: 187 (0.563384056091309s)
+  Total: 0.738912105560303s
+  Memory cleaned up
+
+Processing graph 35 (index 35): erdos_renyi_135_0.07384528718631199 (135 vertices)
+  H0: 1 (0.174166202545166s)
+  H1: 8 (1.496441841125488s)
+  Total: 1.670608043670654s
+  Memory cleaned up
+
+Processing graph 36 (index 36): erdos_renyi_159_0.13096763974334805 (159 vertices)
+  H0: 1 (0.345920085906982s)
+  H1: 0 (147.10685801506042s)
+  Total: 147.45277810096738s
+  Memory cleaned up
+
+Processing graph 37 (index 37): erdos_renyi_255_0.1730274147406641 (255 vertices)
+  H0: 1 (15.192225933074951s)
+  H1: 0 (3737.581491947174s)
+  Total: 3752.773717880249s
+  Memory cleaned up
+
+Processing graph 38 (index 38): erdos_renyi_186_0.11331158277948887 (186 vertices)
+  H0: 1 (0.463058948516846s)
+  H1: 0 (237.2703559398651s)
+  Total: 237.73341488838196s
+  Memory cleaned up
+
+Processing graph 39 (index 39): erdos_renyi_267_0.033815862631708916 (267 vertices)
+  H0: 1 (1.760051965713501s)
+  H1: 248 (1.712110042572022s)
+  Total: 3.472162008285523s
+  Memory cleaned up
+
+Processing graph 40 (index 40): erdos_renyi_182_0.05985263327571603 (182 vertices)
+  H0: 1 (0.555135011672974s)
+  H1: 5 (4.711452007293701s)
+  Total: 5.266587018966675s
+  Memory cleaned up
+
+Processing graph 41 (index 41): erdos_renyi_141_0.15608528757630996 (141 vertices)
+  H0: 1 (0.46547794342041s)
+  H1: 0 (88.7950918674469s)
+  Total: 89.26056981086731s
+  Memory cleaned up
+
+Processing graph 42 (index 42): erdos_renyi_238_0.18858158187555318 (238 vertices)
+  H0: 1 (2.601578950881958s)
+  H1: 0 (2714.3506309986115s)
+  Total: 2716.9522099494934s
+  Memory cleaned up
+
+Processing graph 43 (index 43): erdos_renyi_215_0.011819528094395236 (215 vertices)
+  H0: 1 (0.175304889678955s)
+  H1: 70 (0.158138990402222s)
+  Total: 0.333443880081177s
+  Memory cleaned up
+
+Processing graph 44 (index 44): erdos_renyi_111_0.12766896134444894 (111 vertices)
+  H0: 1 (0.289118051528931s)
+  H1: 0 (5.596091985702515s)
+  Total: 5.885210037231445s
+  Memory cleaned up
+
+Processing graph 45 (index 45): erdos_renyi_149_0.043819189228301005 (149 vertices)
+  H0: 1 (2.428771018981934s)
+  H1: 124 (7.101768016815186s)
+  Total: 9.53053903579712s
+  Memory cleaned up
+
+Processed: 45 graphs
+Skipped (too large): 0 graphs
+==================================================
+FINAL RESULTS:
+==================================================
+Graph: erdos_renyi_112_0.172355682465626
+H0: 1
+H0 Time: 7.560827970504761 sec
+H1: 0
+H1 Time: 23.90249991416931 sec
+Total Time: 31.463327884674072 sec
+
+Graph: erdos_renyi_167_0.06527879832694006
+H0: 1
+H0 Time: 0.408956050872803 sec
+H1: 3
+H1 Time: 2.933825969696045 sec
+Total Time: 3.342782020568848 sec
+
+Graph: erdos_renyi_117_0.01762801849665912
+H0: 1
+H0 Time: 0.244641065597534 sec
+H1: 22
+H1 Time: 0.277924060821533 sec
+Total Time: 0.522565126419067 sec
+
+Graph: erdos_renyi_104_0.11493426273007484
+H0: 1
+H0 Time: 0.345262050628662 sec
+H1: 0
+H1 Time: 5.458037137985229 sec
+Total Time: 5.803299188613891 sec
+
+Graph: erdos_renyi_248_0.18386756768516688
+H0: 1
+H0 Time: 2.472630023956299 sec
+H1: 0
+H1 Time: 3504.358717918396 sec
+Total Time: 3506.8313479423523 sec
+
+Graph: erdos_renyi_120_0.11162387570713697
+H0: 1
+H0 Time: 0.238195896148682 sec
+H1: 1
+H1 Time: 221.70386600494385 sec
+Total Time: 221.94206190109256 sec
+
+Graph: erdos_renyi_150_0.1122009731044374
+H0: 1
+H0 Time: 0.332947015762329 sec
+H1: 0
+H1 Time: 598.0792050361633 sec
+Total Time: 598.4121520519257 sec
+
+Graph: erdos_renyi_269_0.1495568379301205
+H0: 1
+H0 Time: 1.894319772720337 sec
+H1: 0
+H1 Time: 4656.376709938049 sec
+Total Time: 4658.271029710769 sec
+
+Graph: erdos_renyi_281_0.11324617612980124
+H0: 1
+H0 Time: 1.262696981430054 sec
+H1: 0
+H1 Time: 3668.8419318199158 sec
+Total Time: 3670.104628801346 sec
+
+Graph: erdos_renyi_163_0.104724078328697
+H0: 1
+H0 Time: 6.833325862884521 sec
+H1: 0
+H1 Time: 54.77045011520386 sec
+Total Time: 61.60377597808838 sec
+
+Graph: erdos_renyi_112_0.19153838315494265
+H0: 1
+H0 Time: 0.703376054763794 sec
+H1: 0
+H1 Time: 24.533567905426025 sec
+Total Time: 25.23694396018982 sec
+
+Graph: erdos_renyi_146_0.13868622096296346
+H0: 1
+H0 Time: 1.343723058700562 sec
+H1: 0
+H1 Time: 86.42788982391357 sec
+Total Time: 87.77161288261412 sec
+
+Graph: erdos_renyi_273_0.06513737293310466
+H0: 1
+H0 Time: 0.449970960617065 sec
+H1: 0
+H1 Time: 246.25842213630676 sec
+Total Time: 246.70839309692383 sec
+
+Graph: erdos_renyi_139_0.023423826574477412
+H0: 1
+H0 Time: 0.15334415435791 sec
+H1: 72
+H1 Time: 2.179476022720337 sec
+Total Time: 2.332820177078247 sec
+
+Graph: erdos_renyi_250_0.10177270883127358
+H0: 1
+H0 Time: 11.484071016311646 sec
+H1: 0
+H1 Time: 1403.063766002655 sec
+Total Time: 1414.5478370189667 sec
+
+Graph: erdos_renyi_252_0.17646693979094735
+H0: 1
+H0 Time: 2.323076009750366 sec
+H1: 0
+H1 Time: 3482.2029840946198 sec
+Total Time: 3484.52606010437 sec
+
+Graph: erdos_renyi_148_0.01642426977468714
+H0: 1
+H0 Time: 0.58588695526123 sec
+H1: 41
+H1 Time: 1.613640785217285 sec
+Total Time: 2.199527740478515 sec
+
+Graph: erdos_renyi_186_0.17438654976330956
+H0: 1
+H0 Time: 14.785189151763916 sec
+H1: 0
+H1 Time: 587.1044399738312 sec
+Total Time: 601.8896291255951 sec
+
+Graph: erdos_renyi_269_0.10614353052121053
+H0: 1
+H0 Time: 1.00703501701355 sec
+H1: 0
+H1 Time: 2278.719213962555 sec
+Total Time: 2279.7262489795685 sec
+
+Graph: erdos_renyi_181_0.0797170967706373
+H0: 1
+H0 Time: 2.196128845214844 sec
+H1: 0
+H1 Time: 43.6677348613739 sec
+Total Time: 45.863863706588745 sec
+
+Graph: erdos_renyi_100_0.18195341665199177
+H0: 1
+H0 Time: 0.238193035125732 sec
+H1: 0
+H1 Time: 18.435724020004272 sec
+Total Time: 18.673917055130005 sec
+
+Graph: erdos_renyi_132_0.1925072690542063
+H0: 1
+H0 Time: 0.406938076019287 sec
+H1: 0
+H1 Time: 141.79680395126343 sec
+Total Time: 142.20374202728271 sec
+
+Graph: erdos_renyi_276_0.15378670312690257
+H0: 1
+H0 Time: 2.231428861618042 sec
+H1: 0
+H1 Time: 7494.813677072525 sec
+Total Time: 7497.045105934143 sec
+
+Graph: erdos_renyi_120_0.12045146264707933
+H0: 1
+H0 Time: 0.230222940444946 sec
+H1: 0
+H1 Time: 30.9253671169281 sec
+Total Time: 31.155590057373047 sec
+
+Graph: erdos_renyi_101_0.023750124400353227
+H0: 1
+H0 Time: 0.135503053665161 sec
+H1: 25
+H1 Time: 0.428316831588745 sec
+Total Time: 0.563819885253906 sec
+
+Graph: erdos_renyi_147_0.11128558992749973
+H0: 1
+H0 Time: 2.525347948074341 sec
+H1: 0
+H1 Time: 41.96844220161437 sec
+Total Time: 44.493790149688714 sec
+
+Graph: erdos_renyi_155_0.1363221074060452
+H0: 1
+H0 Time: 0.382380962371826 sec
+H1: 0
+H1 Time: 222.4704248905182 sec
+Total Time: 222.85280585289001 sec
+
+Graph: erdos_renyi_279_0.1550167596242925
+H0: 1
+H0 Time: 4.634886026382446 sec
+H1: 0
+H1 Time: 7810.442865848541 sec
+Total Time: 7815.077751874924 sec
+
+Graph: erdos_renyi_201_0.13413841240224636
+H0: 1
+H0 Time: 0.992884159088135 sec
+H1: 0
+H1 Time: 546.7415080070496 sec
+Total Time: 547.7343921661377 sec
+
+Graph: erdos_renyi_159_0.12713600102162873
+H0: 1
+H0 Time: 0.449106931686401 sec
+H1: 0
+H1 Time: 115.36005711555481 sec
+Total Time: 115.80916404724121 sec
+
+Graph: erdos_renyi_208_0.08017158053085718
+H0: 1
+H0 Time: 0.302198886871338 sec
+H1: 0
+H1 Time: 119.95437693595886 sec
+Total Time: 120.25657582283021 sec
+
+Graph: erdos_renyi_154_0.1620615770264933
+H0: 1
+H0 Time: 4.009300947189331 sec
+H1: 0
+H1 Time: 167.1775879859924 sec
+Total Time: 171.18688893318173 sec
+
+Graph: erdos_renyi_110_0.06181171128236331
+H0: 1
+H0 Time: 0.16457986831665 sec
+H1: 63
+H1 Time: 0.322153091430664 sec
+Total Time: 0.486732959747314 sec
+
+Graph: erdos_renyi_187_0.029098807685165456
+H0: 1
+H0 Time: 0.175528049468994 sec
+H1: 187
+H1 Time: 0.563384056091309 sec
+Total Time: 0.738912105560303 sec
+
+Graph: erdos_renyi_135_0.07384528718631199
+H0: 1
+H0 Time: 0.174166202545166 sec
+H1: 8
+H1 Time: 1.496441841125488 sec
+Total Time: 1.670608043670654 sec
+
+Graph: erdos_renyi_159_0.13096763974334805
+H0: 1
+H0 Time: 0.345920085906982 sec
+H1: 0
+H1 Time: 147.10685801506042 sec
+Total Time: 147.45277810096738 sec
+
+Graph: erdos_renyi_255_0.1730274147406641
+H0: 1
+H0 Time: 15.192225933074951 sec
+H1: 0
+H1 Time: 3737.581491947174 sec
+Total Time: 3752.773717880249 sec
+
+Graph: erdos_renyi_186_0.11331158277948887
+H0: 1
+H0 Time: 0.463058948516846 sec
+H1: 0
+H1 Time: 237.2703559398651 sec
+Total Time: 237.73341488838196 sec
+
+Graph: erdos_renyi_267_0.033815862631708916
+H0: 1
+H0 Time: 1.760051965713501 sec
+H1: 248
+H1 Time: 1.712110042572022 sec
+Total Time: 3.472162008285523 sec
+
+Graph: erdos_renyi_182_0.05985263327571603
+H0: 1
+H0 Time: 0.555135011672974 sec
+H1: 5
+H1 Time: 4.711452007293701 sec
+Total Time: 5.266587018966675 sec
+
+Graph: erdos_renyi_141_0.15608528757630996
+H0: 1
+H0 Time: 0.46547794342041 sec
+H1: 0
+H1 Time: 88.7950918674469 sec
+Total Time: 89.26056981086731 sec
+
+Graph: erdos_renyi_238_0.18858158187555318
+H0: 1
+H0 Time: 2.601578950881958 sec
+H1: 0
+H1 Time: 2714.3506309986115 sec
+Total Time: 2716.9522099494934 sec
+
+Graph: erdos_renyi_215_0.011819528094395236
+H0: 1
+H0 Time: 0.175304889678955 sec
+H1: 70
+H1 Time: 0.158138990402222 sec
+Total Time: 0.333443880081177 sec
+
+Graph: erdos_renyi_111_0.12766896134444894
+H0: 1
+H0 Time: 0.289118051528931 sec
+H1: 0
+H1 Time: 5.596091985702515 sec
+Total Time: 5.885210037231445 sec
+
+Graph: erdos_renyi_149_0.043819189228301005
+H0: 1
+H0 Time: 2.428771018981934 sec
+H1: 124
+H1 Time: 7.101768016815186 sec
+Total Time: 9.53053903579712 sec
+
